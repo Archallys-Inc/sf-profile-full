@@ -27,7 +27,7 @@
     "flexibleTaxonomy": true
   },
   "scripts": {
-    "build": "tsc -p . && node --loader ts-node/esm --no-warnings=ExperimentalWarning ../../.gemini/antigravity/scratch/sf-profile-full/node_modules/.bin/oclif manifest",
+    "build": "tsc -p . && node --loader ts-node/esm --no-warnings=ExperimentalWarning node_modules/.bin/oclif manifest",
     "prebuild": "rm -rf lib",
     "build:only": "tsc -p .",
     "clean": "rm -rf lib oclif.manifest.json",

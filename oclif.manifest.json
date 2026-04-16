@@ -1,0 +1,121 @@
+{
+  "commands": {
+    "profile:retrieve:full": {
+      "aliases": [],
+      "args": {},
+      "description": "Retrieves complete Profile XML definitions directly from the Metadata API, bypassing the standard retrieve's \"sparse\" behavior. Unlike `sf project retrieve`, this command returns ALL field-level security, layout assignments, class access, and page access — not just the sections that correspond to other components in your project.\n\nThe command uses the `readMetadata()` API call which returns the full object definition regardless of what is in your local project or manifest.",
+      "examples": [
+        "Retrieve the Admin profile from a specific org:\n<%= config.bin %> <%= command.id %> --name Admin --target-org my-sandbox",
+        "Retrieve multiple profiles (comma-separated):\n<%= config.bin %> <%= command.id %> --name Admin,\"Custom Sales Profile\",Standard --target-org my-sandbox",
+        "Retrieve all profiles from an existing source directory:\n<%= config.bin %> <%= command.id %> --sourcedir force-app/main/default/profiles --target-org my-sandbox",
+        "Retrieve every profile from the org:\n<%= config.bin %> <%= command.id %> --all --target-org my-sandbox",
+        "Retrieve and clean non-portable elements:\n<%= config.bin %> <%= command.id %> --name Admin --target-org my-sandbox --clean",
+        "Save to a custom directory:\n<%= config.bin %> <%= command.id %> --name Admin --target-org my-sandbox --output-dir src/profiles"
+      ],
+      "flags": {
+        "json": {
+          "description": "Format output as json.",
+          "helpGroup": "GLOBAL",
+          "name": "json",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "flags-dir": {
+          "helpGroup": "GLOBAL",
+          "name": "flags-dir",
+          "summary": "Import flag values from a directory.",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "name": {
+          "char": "n",
+          "exclusive": [
+            "sourcedir",
+            "all"
+          ],
+          "name": "name",
+          "summary": "Comma-separated list of Profile names to retrieve (e.g., Admin,\"Custom Sales Profile\").",
+          "hasDynamicHelp": false,
+          "multiple": true,
+          "type": "option"
+        },
+        "sourcedir": {
+          "char": "s",
+          "exclusive": [
+            "name",
+            "all"
+          ],
+          "name": "sourcedir",
+          "summary": "Path to a directory containing .profile-meta.xml files. All profiles found will be retrieved.",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "all": {
+          "char": "a",
+          "exclusive": [
+            "name",
+            "sourcedir"
+          ],
+          "name": "all",
+          "summary": "Retrieve all profiles from the target org.",
+          "allowNo": false,
+          "type": "boolean"
+        },
+        "target-org": {
+          "char": "o",
+          "name": "target-org",
+          "noCacheDefault": true,
+          "required": true,
+          "summary": "Username or alias of the target org. Not required if the `target-org` configuration variable is already set.",
+          "hasDynamicHelp": true,
+          "multiple": false,
+          "type": "option"
+        },
+        "output-dir": {
+          "char": "d",
+          "name": "output-dir",
+          "summary": "Directory to save the retrieved profiles. Defaults to force-app/main/default/profiles.",
+          "default": "force-app/main/default/profiles",
+          "hasDynamicHelp": false,
+          "multiple": false,
+          "type": "option"
+        },
+        "clean": {
+          "name": "clean",
+          "summary": "Strip non-portable permissions (IP ranges, login hours, user license) from the retrieved profiles.",
+          "allowNo": false,
+          "type": "boolean"
+        }
+      },
+      "hasDynamicHelp": true,
+      "hiddenAliases": [],
+      "id": "profile:retrieve:full",
+      "pluginAlias": "@shibiramaiyan/sf-profile-full",
+      "pluginName": "@shibiramaiyan/sf-profile-full",
+      "pluginType": "core",
+      "strict": true,
+      "summary": "Retrieve full Profile metadata using the Metadata API readMetadata() call.",
+      "enableJsonFlag": true,
+      "isESM": true,
+      "relativePath": [
+        "lib",
+        "commands",
+        "profile",
+        "retrieve",
+        "full.js"
+      ],
+      "aliasPermutations": [],
+      "permutations": [
+        "profile:retrieve:full",
+        "retrieve:profile:full",
+        "retrieve:full:profile",
+        "profile:full:retrieve",
+        "full:profile:retrieve",
+        "full:retrieve:profile"
+      ]
+    }
+  },
+  "version": "1.0.0"
+}

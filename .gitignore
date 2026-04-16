@@ -9,9 +9,6 @@ coverage/
 .c8_output/
 .nyc_output/
 
-# Oclif manifest (generated at build time)
-oclif.manifest.json
-
 # OS files
 .DS_Store
 Thumbs.db
