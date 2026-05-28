@@ -8,6 +8,14 @@
   "type": "module",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "homepage": "https://github.com/shibiramaiyan/sf-profile-full#readme",
+  "bugs": {
+    "url": "https://github.com/shibiramaiyan/sf-profile-full/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shibiramaiyan/sf-profile-full.git"
+  },
   "files": [
     "/lib",
     "/messages",
