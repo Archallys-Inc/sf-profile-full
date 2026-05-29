@@ -2,7 +2,7 @@
   "name": "@archallysinc/sf-profile-full",
   "keywords": ["sf-plugin","oclif-plugin"],
   "description": "Salesforce CLI plugin to retrieve full Profile metadata via readMetadata()",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": "archallysinc",
   "license": "MIT",
   "type": "module",
