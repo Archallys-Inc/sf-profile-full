@@ -56,6 +56,7 @@ sf profile retrieve full --help
 ## Usage
 
 ```
+sf plugins install @archallysinc/sf-profile-full
 sf profile retrieve full [flags]
 ```
 
