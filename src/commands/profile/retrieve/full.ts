@@ -19,7 +19,7 @@ import {
 } from '../../../types/profileTypes.js';
 
 Messages.importMessagesDirectoryFromMetaUrl(import.meta.url);
-const messages = Messages.loadMessages('@shibiramaiyan/sf-profile-full', 'profile.retrieve.full');
+const messages = Messages.loadMessages('@archallysinc/sf-profile-full', 'profile.retrieve.full');
 
 export default class ProfileRetrieveFull extends SfCommand<ProfileRetrieveFullResult> {
   public static readonly summary = messages.getMessage('summary');
